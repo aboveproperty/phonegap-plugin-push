@@ -680,7 +680,11 @@
             }
             case UNAuthorizationStatusDenied:
             default:
+            {
+                     NSLog(@"Push Plugin register denied by user");
+                     [self failWithMessage:self.callbackId withMsg:@"User disabled all notifications." withError:nil];
                 break;
+            }
         }
     }];
 }
